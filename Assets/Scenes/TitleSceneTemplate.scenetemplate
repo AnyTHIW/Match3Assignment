@@ -17,12 +17,12 @@ MonoBehaviour:
   description: "\uD0C0\uC774\uD2C0 \uD654\uBA74\uC744 \uC704\uD55C \uD15C\uD50C\uB9BF\n"
   preview: {fileID: 0}
   dependencies:
+  - dependency: {fileID: 2800000, guid: 3d6aa5875908cb04abbc80cb2e4f60c1, type: 3}
+    instantiationMode: 0
   - dependency: {fileID: 2800000, guid: ee148e281f3c41c5b4ff5f8a5afe5a6c, type: 3}
-    instantiationMode: 0
+    instantiationMode: 1
   - dependency: {fileID: 2800000, guid: 2fd6421f253b4ef1a19526541f9ffc0c, type: 3}
-    instantiationMode: 0
-  - dependency: {fileID: 2800000, guid: 5dbc069eb79bd4d43840847264d6d956, type: 3}
-    instantiationMode: 0
+    instantiationMode: 1
   - dependency: {fileID: 11400000, guid: 7306e2bc01611a646832a387eafbddfd, type: 2}
     instantiationMode: 1
   - dependency: {fileID: 12800000, guid: 097983081c8290445930fc41067b6d85, type: 3}
