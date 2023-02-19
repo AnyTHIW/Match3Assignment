@@ -69,50 +69,58 @@ public class SceneCtrl : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        SceneManager.LoadScene((int)SceneType.Splash);
+        if (SceneManager.GetActiveScene().buildIndex != (int)SceneType.Splash)
+        {
+            SceneManager.LoadScene((int)SceneType.Splash);
+        }
 
-        Debug.Log("씬로딩 - 타이틀");
+        StartCoroutine(Count());
+        Debug.Log("HelloStart");
+        StartCoroutine(Load(SceneType.Title));
+    }
 
-        StartCoroutine(LoadSceneWithLoading(SceneType.Title));
+    private IEnumerator Count()
+    {
+        Debug.Log("HelloCountBefore");
+
+        yield return new WaitForSeconds(5F);
+
+        Debug.Log("HelloCountAfter");
+
+
     }
 
     private IEnumerator Load(SceneType scene)
     {
         AsyncOperation op = SceneManager.LoadSceneAsync((int)scene, LoadSceneMode.Single);
         op.allowSceneActivation = false;//로딩이 끝나면 씬을 바로 시작 못하게 한다
+        Debug.Log(string.Format("allowSceneActivation : {0} | progress : {1} | isDone : {2}", op.allowSceneActivation, op.progress, op.isDone));
 
-        Debug.Log((float)op.progress);
-        Debug.Log(op.allowSceneActivation);
-        Debug.Log(op.isDone);
         //비동기 방식으로 씬을 불러오는 도중에도 다른 작업을 할 수  LoadSceneAsync 함수
         //로딩의 진행정도는 AsyncOperation Class로 반환된다
 
         while (op.progress <= FAKE_GAUGE_AMOUNT)//isDone이 false일 때 동안, 즉 Load가 진행중을 의미한다
         {
-            Debug.Log((float)op.progress);
-            Debug.Log(op.allowSceneActivation);
-            Debug.Log(op.isDone);
+            Debug.Log(string.Format("allowSceneActivation : {0} | progress : {1} | isDone : {2}", op.allowSceneActivation, op.progress, op.isDone));
+
+            // yield return null 없애고
             yield return null;
         }
 
+        // 여기에 new WaitForSeconds 쓰기?
+        Debug.Log(string.Format("allowSceneActivation : {0} | progress : {1} | isDone : {2}", op.allowSceneActivation, op.progress, op.isDone));
+
+        new WaitForSeconds(FAKE_TIME);
+        Debug.Log(string.Format("allowSceneActivation : {0} | progress : {1} | isDone : {2}", op.allowSceneActivation, op.progress, op.isDone));
 
         yield return new WaitForSeconds(FAKE_TIME);
 
-        Debug.Log((float)op.progress);
-        Debug.Log(op.allowSceneActivation);
-        Debug.Log(op.isDone);
+        Debug.Log(string.Format("allowSceneActivation : {0} | progress : {1} | isDone : {2}", op.allowSceneActivation, op.progress, op.isDone));
 
         //로딩이 끝나면 씬을 바로 시작 못하게 한다
         if (op.allowSceneActivation == false)
         {
-            Debug.Log((float)op.progress);
-            Debug.Log(op.allowSceneActivation);
-            Debug.Log(op.isDone);
-            op.allowSceneActivation = true;
-
-            Debug.Log((float)op.progress);
-            Debug.Log(op.allowSceneActivation);
-            Debug.Log(op.isDone);
+            Debug.Log(string.Format("allowSceneActivation : {0} | progress : {1} | isDone : {2}", op.allowSceneActivation, op.progress, op.isDone));
 
             yield break;
         }
