@@ -62,17 +62,7 @@ public class GameplayCtrl : MonoBehaviour
         }
     }
 
-    private void FillEmptyGrid(int emptyNumber)
-    {
-
-    }
-
-    private void CheckMatchForAll()
-    {
-
-    }
-
-    private void CheckMatchForLine()
+    private void CheckMatch()
     {
 
     }
@@ -86,4 +76,13 @@ public class GameplayCtrl : MonoBehaviour
         grid[(int)b.transform.position.x, (int)b.transform.position.y] = b;
     }
 
+    private void GetScore()
+    {
+
+    }
+
+    private void UseMovement()
+    {
+
+    }
 }
