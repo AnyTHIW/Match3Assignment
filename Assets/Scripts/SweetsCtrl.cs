@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum SweetType
+public enum SweetsType
 {
     Yellow,
     Red,
@@ -10,14 +10,26 @@ public enum SweetType
     Purple,
 }
 
-public enum SpecialSweetType
+public enum SpecialSweetsType
 {
-    Popping,
+    PoppingCandy,
 
 }
 
 public class SweetsCtrl : MonoBehaviour
 {
+    public static SweetsCtrl Instance
+    {
+        get
+        {
+            return instance;
+        }
+        set
+        {
+            instance = value;
+        }
+    }
+    private static SweetsCtrl instance;
 
     private void MakeSpecialSweet()
     {

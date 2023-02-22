@@ -25,13 +25,13 @@ public class SceneCtrl : MonoBehaviour
             instance = value;
         }
     }
+    private static SceneCtrl instance;
 
     public Canvas LoadingCanvas;
     public GameObject LoadingPanel;
     public Image ProgressBar;
     public Camera MainCamera;
 
-    private static SceneCtrl instance;
     private Image LoadingImage;
     private GraphicRaycaster LoadingCanvasRaycaster;
     private const float FAKE_GAUGE_AMOUNT = 0.7F;

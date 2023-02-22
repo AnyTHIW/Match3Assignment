@@ -4,23 +4,22 @@ using UnityEngine;
 
 public class GameplayCtrl : MonoBehaviour
 {
-    public int width;
-    public int height;
-
-    public GameObject[] tiles;
-    public GameObject[,] grid;
+    public static GameplayCtrl Instance
+    {
+        get
+        {
+            return instance;
+        }
+        set
+        {
+            instance = value;
+        }
+    }
+    private static GameplayCtrl instance;
 
     private void Start()
     {
-        grid = new GameObject[width, height];
 
-        for (int x = 0; x < width; x++)
-        {
-            for (int y = 0; y < height; y++)
-            {
-                grid[x, y] = Instantiate(tiles[Random.Range(0, tiles.Length)], new Vector3(x, y, 0), Quaternion.identity) as GameObject;
-            }
-        }
     }
 
     private void Update()
