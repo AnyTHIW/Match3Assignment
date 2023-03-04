@@ -2110,7 +2110,7 @@
 											"font": "Arial;13;0",
 											"left": -368,
 											"top": 1536,
-											"width": 73.67724609375,
+											"width": 77.9365234375,
 											"height": 13,
 											"text": "(from Model)"
 										},
@@ -2250,7 +2250,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGGobasn6vlyno="
 							},
-							"name": "홀더청크"
+							"name": "홀더청크",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -2258,7 +2259,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGGobasn6vlyno="
 							},
-							"name": "홀더"
+							"name": "홀더",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -2266,7 +2268,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGGobasn6vlyno="
 							},
-							"name": "스포너그룹"
+							"name": "스포너그룹",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -2474,7 +2477,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGGpZLIb0iLHok="
 							},
-							"name": "스코어"
+							"name": "스코어",
+							"type": ""
 						}
 					],
 					"operations": [
