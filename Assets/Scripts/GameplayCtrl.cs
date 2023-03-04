@@ -37,26 +37,26 @@ public class GameplayCtrl : MonoBehaviour
                 int y = Mathf.RoundToInt(selected.transform.position.y);
                 GameObject target = null;
 
-                if (x > 0 && grid[x - 1, y] != null && grid[x - 1, y].tag == selected.tag)
-                {
-                    target = grid[x - 1, y];
-                }
-                if (x < width - 1 && grid[x + 1, y] != null && grid[x + 1, y].tag == selected.tag)
-                {
-                    target = grid[x + 1, y];
-                }
-                if (y > 0 && grid[x, y - 1] != null && grid[x, y - 1].tag == selected.tag)
-                {
-                    target = grid[x, y - 1];
-                }
-                if (y < height - 1 && grid[x, y + 1] != null && grid[x, y + 1].tag == selected.tag)
-                {
-                    target = grid[x, y + 1];
-                }
-                if (target != null)
-                {
-                    Swap(selected, target);
-                }
+                //if (x > 0 && grid[x - 1, y] != null && grid[x - 1, y].tag == selected.tag)
+                //{
+                //    target = grid[x - 1, y];
+                //}
+                //if (x < width - 1 && grid[x + 1, y] != null && grid[x + 1, y].tag == selected.tag)
+                //{
+                //    target = grid[x + 1, y];
+                //}
+                //if (y > 0 && grid[x, y - 1] != null && grid[x, y - 1].tag == selected.tag)
+                //{
+                //    target = grid[x, y - 1];
+                //}
+                //if (y < height - 1 && grid[x, y + 1] != null && grid[x, y + 1].tag == selected.tag)
+                //{
+                //    target = grid[x, y + 1];
+                //}
+                //if (target != null)
+                //{
+                //    Swap(selected, target);
+                //}
             }
         }
     }
@@ -71,8 +71,8 @@ public class GameplayCtrl : MonoBehaviour
         Vector3 temp = a.transform.position;
         a.transform.position = b.transform.position;
         b.transform.position = temp;
-        grid[(int)a.transform.position.x, (int)a.transform.position.y] = a;
-        grid[(int)b.transform.position.x, (int)b.transform.position.y] = b;
+        //grid[(int)a.transform.position.x, (int)a.transform.position.y] = a;
+        //grid[(int)b.transform.position.x, (int)b.transform.position.y] = b;
     }
 
     private void GetScore()

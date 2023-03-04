@@ -1,7 +1,6 @@
 using CustomDic;
 using System.Collections.Generic;
 using UnityEngine;
-
 using KeyType = System.String;
 
 /*풀 정보 데이터 클래스(샘플오브젝트와 리스트를 포함)*/
@@ -19,13 +18,13 @@ public class ObjectData : List<GameObject>
     /*풀데이터 클래스 '생성자'*/
     public ObjectData(string type, KeyType keyName)
     {
+        name = string.Format("{0}_Data", keyName);
         objectType = type;
         objectName = keyName;
         maxObjectCount = MAX_COUNT;
     }
 
-    public GameObject PoolLocation;
-    public List<GameObject> Pool;
+    public List<GameObject> PoolLocation;
 }
 
 [DisallowMultipleComponent]
@@ -45,11 +44,16 @@ public class ObjectCtrl : MonoBehaviour
     private static ObjectCtrl instance;  //  현재 클래스 싱글턴 패턴화
 
     [SerializeField]
-    private SerializableDictionary<KeyType, GameObject> ObjectDict = new SerializableDictionary<KeyType, GameObject>();   //  생성된 오브젝트 보관 딕셔너리
+    public SerializableDictionary<KeyType, GameObject> ObjectDict = new SerializableDictionary<KeyType, GameObject>();   //  이름과 그샘플 오브젝트 딕셔너리
 
     [SerializeField]
-    private GameObject ObjectPool;
-    private List<ObjectData> ObjectDataList;
+    private static Dictionary<KeyType, List<GameObject>> PoolDict = new Dictionary<KeyType, List<GameObject>>();    // 이름과 오브젝트 풀을 1:1대응시킨 딕셔너리
+
+    [SerializeField]
+    private static Dictionary<KeyType, ObjectData> DataDict = new Dictionary<KeyType, ObjectData>(); //  이름과 오브젝트 데이터를 1:1대응시킨 딕셔너리
+
+    private GameObject ObjectPoolInScene;  //  게임 씬 내 빈 게임 오브젝트 풀
+    private GameObject TypeObjectInScene;    //  게임 씬 내 오브젝트 풀 타입
 
     private void Awake()
     {
@@ -62,7 +66,7 @@ public class ObjectCtrl : MonoBehaviour
             Destroy(gameObject);
         }
 
-        ObjectPool = new GameObject("ObjectPoolingContainer");
+        ObjectPoolInScene = new GameObject("ObjectPoolingContainer");
         MakeObjectPool("SWEET");
     }
 
@@ -90,15 +94,15 @@ public class ObjectCtrl : MonoBehaviour
     //}
 
     /*꺼진 오브젝트를 이름으로 확인*/
-    public GameObject CheckDeactivatedObject(string keyName)
+    public GameObject CheckDeactivatedObject(KeyType name)
     {
-        ObjectData select = null;   //  임시 컨테이너
+        GameObject select = null;   //  임시 컨테이너
 
         // 오브젝트딕셔너리
-        if (ObjectDict.ContainsKey(keyName))
+        if (PoolDict.ContainsKey(name))
         {
             // 풀데이터 검색
-            foreach (GameObject obj in ObjectDict[keyName].Pool)
+            foreach (GameObject obj in PoolDict[name])
             {
                 if (!obj.activeSelf)
                 {
@@ -126,64 +130,64 @@ public class ObjectCtrl : MonoBehaviour
         return select;
     }
 
-    /*이름으로 풀 데이터를 리턴하는 함수*/
-    public PoolData GetPool(string name)
-    {
-        PoolData select = null; //  임시 컨테이너
+    ///*이름으로 풀 데이터를 리턴하는 함수*/
+    //public PoolData GetPool(string name)
+    //{
+    //    PoolData select = null; //  임시 컨테이너
 
-        foreach (PoolData pool in ObjectDict.Values)
-        {
-            if (name == pool.name)
-            {
-                select = pool;
-            }
-        }
+    //    foreach (PoolData pool in ObjectDict.Values)
+    //    {
+    //        if (name == pool.name)
+    //        {
+    //            select = pool;
+    //        }
+    //    }
 
-        return select;
-    }
+    //    return select;
+    //}
 
-    /*poolType으로 꺼진 오브젝트 종류 확인 및 해당 오브젝트 반환*/
-    public GameObject CheckDeactivatedObjectWithPoolType(string poolType)
-    {
-        List<string> keyNameList = new();
+    //    /*poolType으로 꺼진 오브젝트 종류 확인 및 해당 오브젝트 반환*/
+    //    public GameObject CheckDeactivatedObjectWithPoolType(string poolType)
+    //    {
+    //        List<string> keyNameList = new();
 
-        foreach (PoolData pool in ObjectDict.Values)
-        {
-            if (pool.poolType == poolType)
-            {
-                keyNameList.Add(pool.name);
-            }
-        }
+    //        foreach (ObjectData item in DataDict.Values)
+    //        {
+    //            if (item.objectType == poolType)
+    //            {
+    //                keyNameList.Add(item.objectType);
+    //            }
+    //        }
 
-        foreach (string keyName in keyNameList)
-        {
-            PoolData newPoolData;   //  임시
+    //        foreach (string keyName in keyNameList)
+    //        {
+    //            PoolData newPoolData;   //  임시
 
-            // 오브젝트딕셔너리
-            if (ObjectDict.TryGetValue(keyName, out newPoolData))
-            {
-                foreach (GameObject obj in newPoolData.Pool)
-                {
-                    if (!obj.activeSelf)
-                    {
-                        return obj;
-                    }
-                    else
-                    {
-#if SHOW_DEBUG_MESSAGE
-                        Debug.Log("꺼진 오브젝트가 없음, 새로 생성해야됨");
-#endif
-                        return null;
-                    }
-                }
-            }
-        }
+    //            // 오브젝트딕셔너리
+    //            if (ObjectDict.TryGetValue(keyName, out newPoolData))
+    //            {
+    //                foreach (GameObject obj in newPoolData.Pool)
+    //                {
+    //                    if (!obj.activeSelf)
+    //                    {
+    //                        return obj;
+    //                    }
+    //                    else
+    //                    {
+    //#if SHOW_DEBUG_MESSAGE
+    //                        Debug.Log("꺼진 오브젝트가 없음, 새로 생성해야됨");
+    //#endif
+    //                        return null;
+    //                    }
+    //                }
+    //            }
+    //        }
 
-#if SHOW_DEBUG_MESSAGE
-        Debug.Log("키가 잘못됨");
-#endif
-        return null;
-    }
+    //#if SHOW_DEBUG_MESSAGE
+    //        Debug.Log("키가 잘못됨");
+    //#endif
+    //        return null;
+    //    }
 
     /*없으면 생성, 있으면 리스트에서 선택*/
     public GameObject GetObject(KeyType key)
@@ -198,7 +202,7 @@ public class ObjectCtrl : MonoBehaviour
 #if SHOW_DEBUG_MESSAGE
             Debug.Log("오브젝트 생성");
 #endif
-            select = CloneObject(ObjectDict.GetValueOrDefault(key), ObjectDataList);  //  오브젝트 복사 후 할당
+            select = CloneObject(ObjectDict.GetValueOrDefault(key));  //  오브젝트 복사 후 할당
         }
 
         select.transform.SetParent(gameObject.transform);   // 부모 할당
@@ -207,13 +211,13 @@ public class ObjectCtrl : MonoBehaviour
     }
 
     /*오브젝트를 복사하는 함수*/
-    public GameObject CloneObject(GameObject obj, ObjectData data)
+    public GameObject CloneObject(GameObject obj)
     {
         GameObject select;    //  임시 컨테이너
 
         select = Instantiate(obj) as GameObject;
-        data.Pool.Add(select);
-        select.transform.SetParent(data.PoolLocation.transform);
+
+        select.transform.SetParent(TypeObjectInScene.transform);
 
         select.SetActive(false);
 
@@ -230,24 +234,21 @@ public class ObjectCtrl : MonoBehaviour
     {
         foreach (KeyValuePair<KeyType, GameObject> item in ObjectDict)
         {
-            ObjectData newObjectData = new ObjectData(type, item.Key);
-            newObjectData.objectName = item.Key;
+            ObjectData newObjectData = new ObjectData(type, item.Key);  //  오브젝트딕셔너리를 토대로 오브젝트 데이터 생성
+            DataDict.Add(item.Key, newObjectData);
+            newObjectData.PoolLocation = new List<GameObject>();
+            PoolDict.Add(newObjectData.objectType, newObjectData.PoolLocation);
 
-            GameObject TypePool = new GameObject(type);
-            ObjectPool.transform.SetParent(TypePool.transform);
-
-            newObjectData.PoolLocation = TypePool;
-
+            TypeObjectInScene = new GameObject(newObjectData.objectType);
+            TypeObjectInScene.transform.SetParent(ObjectPoolInScene.transform);
 
             for (int i = 0; i < ObjectData.INITIALIZER_COUNT; i++)
             {
-                TypePool.transform.SetParent(instance.CloneObject(item.Value, newObjectData).transform);
+                GameObject newObj = instance.CloneObject(item.Value);
+                PoolDict[item.Key].Add(newObj);
             }
-
-            ObjectDataList.Add(newObjectData);
         }
 
     }
-
 
 }

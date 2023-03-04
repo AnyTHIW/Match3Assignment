@@ -1,12 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum CellType
-{
-    Normal,
-    Hole,
-}
-
 public class BoardCtrl : MonoBehaviour
 {
     public static BoardCtrl Instance
@@ -22,44 +16,53 @@ public class BoardCtrl : MonoBehaviour
     }
     private static BoardCtrl instance;
 
-
-    public GameObject Board;
-    public readonly Vector2 cellSize;
-
     private int spawnerNumber;
+    private int cellsAreaCount;
 
-    private List<Vector2> cellsAreaInfo = new List<Vector2>();
+    private Vector2 CellsAreaOffset;
+    private Vector2 CellsAreaSize;
 
-    public GameObject[] tiles;
+    public GameObject CellReference;
+    public GameObject SpawningPointGroup;
     public GameObject[,] grid;
 
     public void Awake()
     {
-        Board = GameObject.FindWithTag("BOARD");
+        CellsAreaSize = gameObject.GetComponent<BoxCollider2D>().size;
+        CellsAreaOffset = gameObject.GetComponent<BoxCollider2D>().offset;
     }
 
     public void Start()
     {
-        CheckBoardInfo();
+        //CheckBoardInfo();
 
-        grid = new GameObject[width, height];
+        //int cellNumberX = cellsAreaSize / cell;
+        //int cellNumberY = cellsAreaSize / cellsAreaSize;
+        //int width = (int)cellSize.x;
+        //int heigth = (int)cellSize.y;
+        //grid = new GameObject[width, heigth];
 
-        for (int x = 0; x < width; x++)
-        {
-            for (int y = 0; y < height; y++)
-            {
-                grid[x, y] = Instantiate(tiles[Random.Range(0, tiles.Length)], new Vector3(x, y, 0), Quaternion.identity) as GameObject;
-            }
-        }
+        //for (int x = 0; x < width; x++)
+        //{
+        //    for (int y = 0; y < heigth; y++)
+        //{
+        //    //grid[x, y] = Instantiate(tiles[Random.Range(0, tiles.Length)], new Vector3(x, y, 0), Quaternion.identity) as GameObject;
+        //}
+        //}
 
     }
+
+    //private void MakeBoard()
+    //{
+
+    //}
 
     // 전반적인 길이, 높이, 스포너 등을 확인
     private void CheckBoardInfo()
     {
         spawnerNumber = GameObject.FindGameObjectsWithTag("SPAWNER").Length;
         CheckCellsAreaInfo();
-        InitBoard(cellsAreaInfo);
+        //InitBoard(cellsAreaInfo);
     }
 
     private void CheckCellsAreaInfo()
@@ -70,33 +73,28 @@ public class BoardCtrl : MonoBehaviour
 
         for (int i = 0; i < tmp.Length; i++)
         {
-            cellsAreaInfo.Add(tmp[i].GetComponent<BoxCollider2D>().size);
+            //cellsAreaInfo.Add(tmp[i].GetComponent<BoxCollider2D>().size);
         }
     }
 
     private void InitBoard(List<Vector2> areaInfo)
     {
-        foreach(Vector2 item in areaInfo)
+        foreach (Vector2 item in areaInfo)
         {
-            int VerticalRowNumber = (int)(item.x / cellSize.x);
-            int CellsNumberInVerticalRow = (int)(item.y / cellSize.y);
+            //int VerticalRowNumber = (int)(item.x / cellSize.x);
+            //int CellsNumberInVerticalRow = (int)(item.y / cellSize.y);
 
-            SweetsCtrl.instance
+            //SweetsCtrl.instance
         }
 
 
-
-
-
-
-
     }
 
-    private Vector2 CalcCellsNumberInCellsArea(Vector2 size)
-    {
-        Vector2 cellCount = new Vector2 ((int)(size.x / cellSize.x), (int)(size.y / cellSize.y));
-        return cellCount;
-    }
+    //private Vector2 CalcCellsNumberInCellsArea(Vector2 size)
+    //{
+    //    //Vector2 cellCount = new Vector2 ((int)(size.x / cellSize.x), (int)(size.y / cellSize.y));
+    //    //return cellCount;
+    //}
 
     private void FillEmptyCell()
     {
