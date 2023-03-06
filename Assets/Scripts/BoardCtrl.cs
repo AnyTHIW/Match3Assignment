@@ -16,15 +16,9 @@ public class BoardCtrl : MonoBehaviour
     }
     private static BoardCtrl instance;
 
-    private int spawnerNumber;
-    private int cellsAreaCount;
-
-    private Vector2 CellsAreaOffset;
-    private Vector2 CellsAreaSize;
-
-    public GameObject CellReference;
-    public GameObject SpawningPointGroup;
-    public GameObject[,] grid;
+    public GameObject[] HolderChunk;
+    public GameObject[,] Holder;
+    public GameObject[] SpawnerGroup;
 
     public void Awake()
     {
