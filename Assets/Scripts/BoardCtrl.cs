@@ -17,82 +17,106 @@ public class BoardCtrl : MonoBehaviour
     private static BoardCtrl instance;
 
     public GameObject[] HolderChunk;
-    public GameObject[,] Holder;
+    public float[,] Holder;
     public GameObject[] SpawnerGroup;
+
+    public int width;
+    public int height;
+
+    private void InspectHolderChunk()
+    {
+
+    }
 
     public void Awake()
     {
-        CellsAreaSize = gameObject.GetComponent<BoxCollider2D>().size;
-        CellsAreaOffset = gameObject.GetComponent<BoxCollider2D>().offset;
+        Holder = new float[width, height];
     }
 
     public void Start()
     {
-        //CheckBoardInfo();
-
-        //int cellNumberX = cellsAreaSize / cell;
-        //int cellNumberY = cellsAreaSize / cellsAreaSize;
-        //int width = (int)cellSize.x;
-        //int heigth = (int)cellSize.y;
-        //grid = new GameObject[width, heigth];
-
-        //for (int x = 0; x < width; x++)
-        //{
-        //    for (int y = 0; y < heigth; y++)
-        //{
-        //    //grid[x, y] = Instantiate(tiles[Random.Range(0, tiles.Length)], new Vector3(x, y, 0), Quaternion.identity) as GameObject;
-        //}
-        //}
 
     }
 
-    //private void MakeBoard()
-    //{
-
-    //}
-
-    // 전반적인 길이, 높이, 스포너 등을 확인
-    private void CheckBoardInfo()
+    public void Update()
     {
-        spawnerNumber = GameObject.FindGameObjectsWithTag("SPAWNER").Length;
-        CheckCellsAreaInfo();
-        //InitBoard(cellsAreaInfo);
-    }
+        Time.timeScale = 0F;
 
-    private void CheckCellsAreaInfo()
-    {
-        GameObject[] tmp;
-
-        tmp = GameObject.FindGameObjectsWithTag("CELLSAREA");
-
-        for (int i = 0; i < tmp.Length; i++)
+        if (Input.GetMouseButtonDown(0))
         {
-            //cellsAreaInfo.Add(tmp[i].GetComponent<BoxCollider2D>().size);
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+
+            if (hit.collider != null)
+            {
+                GameObject selected = hit.collider.gameObject;
+
+                int x = Mathf.RoundToInt(selected.transform.position.x);
+                int y = Mathf.RoundToInt(selected.transform.position.y);
+
+                GameObject target = null;
+
+                if (x > 0 && grid[x - 1, y] != null && grid[x - 1, y].tag == selected.tag)
+                {
+                    target = grid[x - 1, y];
+                }
+                if (x < width - 1 && grid[x + 1, y] != null && grid[x + 1, y].tag == selected.tag)
+                {
+                    target = grid[x + 1, y];
+                }
+                if (y > 0 && grid[x, y - 1] != null && grid[x, y - 1].tag == selected.tag)
+                {
+                    target = grid[x, y - 1];
+                }
+                if (y < height - 1 && grid[x, y + 1] != null && grid[x, y + 1].tag == selected.tag)
+                {
+                    target = grid[x, y + 1];
+                }
+                if (target != null)
+                {
+                    Swap(selected, target);
+                }
+            }
         }
     }
 
-    private void InitBoard(List<Vector2> areaInfo)
+
+    private void CheckMatch()
     {
-        foreach (Vector2 item in areaInfo)
-        {
-            //int VerticalRowNumber = (int)(item.x / cellSize.x);
-            //int CellsNumberInVerticalRow = (int)(item.y / cellSize.y);
-
-            //SweetsCtrl.instance
-        }
-
 
     }
 
-    //private Vector2 CalcCellsNumberInCellsArea(Vector2 size)
-    //{
-    //    //Vector2 cellCount = new Vector2 ((int)(size.x / cellSize.x), (int)(size.y / cellSize.y));
-    //    //return cellCount;
-    //}
-
-    private void FillEmptyCell()
+    private void Swap(GameObject a, GameObject b)
     {
-        // 빈칸 생겼을때, 스포너에서 빈칸 채우기
+        Vector3 temp = a.transform.position;
+        a.transform.position = b.transform.position;
+        b.transform.position = temp;
+        //grid[(int)a.transform.position.x, (int)a.transform.position.y] = a;
+        //grid[(int)b.transform.position.x, (int)b.transform.position.y] = b;
+    }
+
+    private void GetScore()
+    {
+
+    }
+
+    private void UseMovement()
+    {
+
+    }
+
+    private void FillSweets(Vector2 pos)
+    {
+        
+    }
+
+    private void DestroySweets()
+    {
+
+    }
+
+    private void SwapSweets()
+    {
+
     }
 
 }

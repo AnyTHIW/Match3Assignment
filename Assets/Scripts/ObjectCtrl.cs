@@ -53,7 +53,7 @@ public class ObjectCtrl : MonoBehaviour
     private static Dictionary<KeyType, ObjectData> DataDict = new Dictionary<KeyType, ObjectData>(); //  이름과 오브젝트 데이터를 1:1대응시킨 딕셔너리
 
     private GameObject ObjectPoolInScene;  //  게임 씬 내 빈 게임 오브젝트 풀
-    private GameObject TypeObjectInScene;    //  게임 씬 내 오브젝트 풀 타입
+    private GameObject TypeObjectInScene = null;    //  게임 씬 내 오브젝트 풀 타입
 
     private void Awake()
     {
@@ -67,31 +67,12 @@ public class ObjectCtrl : MonoBehaviour
         }
 
         ObjectPoolInScene = new GameObject("ObjectPoolingContainer");
-        MakeObjectPool("SWEET");
+        MakePools("SWEETS");
     }
 
     private void Start()
     {
     }
-
-    ///*poolType을 가진 Pool들 중 풀 데이터를 랜덤 반환*/
-    //public ObjectData GetRandomOnePoolFromPoolType(string poolType)
-    //{
-    //    ObjectData[] SelectedPools = new ObjectData[ObjectDict.Count];    //  랜덤으로 뽑을 오브젝트 배열
-    //    int selectedPoolsCounter = 0;   //  해당하는 오브젝트들 갯수
-
-    //    foreach (KeyValuePair<KeyType, GameObject> itemPool in ObjectDict.Values)
-    //    {
-    //        //  원하는 풀 태그일'경우'
-    //        if (itemPool.poolType == poolType)
-    //        {
-    //            SelectedPools[selectedPoolsCounter] = itemPool;
-    //            selectedPoolsCounter++;    //  순서대로 키 저장
-    //        }
-    //    }
-
-    //    return SelectedPools[Random.Range(0, selectedPoolsCounter)];
-    //}
 
     /*꺼진 오브젝트를 이름으로 확인*/
     public GameObject CheckDeactivatedObject(KeyType name)
@@ -130,65 +111,6 @@ public class ObjectCtrl : MonoBehaviour
         return select;
     }
 
-    ///*이름으로 풀 데이터를 리턴하는 함수*/
-    //public PoolData GetPool(string name)
-    //{
-    //    PoolData select = null; //  임시 컨테이너
-
-    //    foreach (PoolData pool in ObjectDict.Values)
-    //    {
-    //        if (name == pool.name)
-    //        {
-    //            select = pool;
-    //        }
-    //    }
-
-    //    return select;
-    //}
-
-    //    /*poolType으로 꺼진 오브젝트 종류 확인 및 해당 오브젝트 반환*/
-    //    public GameObject CheckDeactivatedObjectWithPoolType(string poolType)
-    //    {
-    //        List<string> keyNameList = new();
-
-    //        foreach (ObjectData item in DataDict.Values)
-    //        {
-    //            if (item.objectType == poolType)
-    //            {
-    //                keyNameList.Add(item.objectType);
-    //            }
-    //        }
-
-    //        foreach (string keyName in keyNameList)
-    //        {
-    //            PoolData newPoolData;   //  임시
-
-    //            // 오브젝트딕셔너리
-    //            if (ObjectDict.TryGetValue(keyName, out newPoolData))
-    //            {
-    //                foreach (GameObject obj in newPoolData.Pool)
-    //                {
-    //                    if (!obj.activeSelf)
-    //                    {
-    //                        return obj;
-    //                    }
-    //                    else
-    //                    {
-    //#if SHOW_DEBUG_MESSAGE
-    //                        Debug.Log("꺼진 오브젝트가 없음, 새로 생성해야됨");
-    //#endif
-    //                        return null;
-    //                    }
-    //                }
-    //            }
-    //        }
-
-    //#if SHOW_DEBUG_MESSAGE
-    //        Debug.Log("키가 잘못됨");
-    //#endif
-    //        return null;
-    //    }
-
     /*없으면 생성, 있으면 리스트에서 선택*/
     public GameObject GetObject(KeyType key)
     {
@@ -224,31 +146,38 @@ public class ObjectCtrl : MonoBehaviour
         return select;
     }
 
-    public void OnGameCleared()
-    {
 
-    }
-
-    /*특정 타입의 풀을 만드는 함수*/
-    private void MakeObjectPool(string type)
+    /*스위츠 풀을 만드는 함수*/
+    private void MakePools(string objType)
     {
         foreach (KeyValuePair<KeyType, GameObject> item in ObjectDict)
         {
-            ObjectData newObjectData = new ObjectData(type, item.Key);  //  오브젝트딕셔너리를 토대로 오브젝트 데이터 생성
-            DataDict.Add(item.Key, newObjectData);
-            newObjectData.PoolLocation = new List<GameObject>();
-            PoolDict.Add(newObjectData.objectType, newObjectData.PoolLocation);
+            ObjectData newObjectData = new ObjectData(objType, item.Key);  //  오브젝트딕셔너리를 토대로 오브젝트 데이터 생성
 
-            TypeObjectInScene = new GameObject(newObjectData.objectType);
+            DataDict.Add(item.Key, newObjectData);
+
+            newObjectData.PoolLocation = new List<GameObject>();
+            PoolDict.Add(newObjectData.objectName, newObjectData.PoolLocation);
+
+            if (TypeObjectInScene == null)
+            {
+                TypeObjectInScene = new GameObject(newObjectData.objectType);
+            }
             TypeObjectInScene.transform.SetParent(ObjectPoolInScene.transform);
 
             for (int i = 0; i < ObjectData.INITIALIZER_COUNT; i++)
             {
                 GameObject newObj = instance.CloneObject(item.Value);
+                newObj.name = item.Key;
                 PoolDict[item.Key].Add(newObj);
             }
         }
+    }
+
+    public void OnGameCleared()
+    {
 
     }
+
 
 }

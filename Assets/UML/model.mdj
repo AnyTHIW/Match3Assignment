@@ -199,12 +199,30 @@
 											"model": {
 												"$ref": "AAAAAAGGof5Nua0fDU4="
 											},
+											"visible": false,
 											"font": "Arial;13;0",
 											"left": 21,
 											"top": 139,
 											"width": 151,
 											"height": 13,
 											"text": "스위츠만들기()",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGrJY83L9SlhY=",
+											"_parent": {
+												"$ref": "AAAAAAGGobasoavuZXI="
+											},
+											"model": {
+												"$ref": "AAAAAAGGrJY8zb9PbX8="
+											},
+											"font": "Arial;13;0",
+											"left": 21,
+											"top": 141,
+											"width": 151,
+											"height": 13,
+											"text": "스위츠채우기()",
 											"horizontalAlignment": 0
 										},
 										{
@@ -218,7 +236,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 21,
-											"top": 154,
+											"top": 156,
 											"width": 151,
 											"height": 13,
 											"text": "스위츠파괴하기()",
@@ -235,27 +253,10 @@
 											},
 											"font": "Arial;13;0",
 											"left": 21,
-											"top": 169,
+											"top": 171,
 											"width": 151,
 											"height": 13,
 											"text": "스위츠위치바꾸기()",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLOperationView",
-											"_id": "AAAAAAGGrJY83L9SlhY=",
-											"_parent": {
-												"$ref": "AAAAAAGGobasoavuZXI="
-											},
-											"model": {
-												"$ref": "AAAAAAGGrJY8zb9PbX8="
-											},
-											"font": "Arial;13;0",
-											"left": 21,
-											"top": 184,
-											"width": 151,
-											"height": 13,
-											"text": "스위츠배열하기()",
 											"horizontalAlignment": 0
 										}
 									],
@@ -263,7 +264,7 @@
 									"left": 16,
 									"top": 134,
 									"width": 161,
-									"height": 68
+									"height": 55
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -352,8 +353,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -411,
-											"top": 1573,
+											"left": -427,
+											"top": 1477,
 											"width": 49,
 											"height": 13
 										},
@@ -364,8 +365,8 @@
 												"$ref": "AAAAAAGGobcBz6wVXKI="
 											},
 											"font": "Arial;13;1",
-											"left": 29,
-											"top": 807,
+											"left": 21,
+											"top": 759,
 											"width": 94.61181640625,
 											"height": 13,
 											"text": "스위츠 핸들러"
@@ -378,8 +379,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -496,
-											"top": 1456,
+											"left": -512,
+											"top": 1360,
 											"width": 77.9365234375,
 											"height": 13,
 											"text": "(from Model)"
@@ -392,15 +393,15 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -496,
-											"top": 1456,
+											"left": -512,
+											"top": 1360,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 24,
-									"top": 800,
+									"left": 16,
+									"top": 752,
 									"width": 104.61181640625,
 									"height": 25,
 									"stereotypeLabel": {
@@ -436,8 +437,8 @@
 												"$ref": "AAAAAAGGpYNxakg9RNU="
 											},
 											"font": "Arial;13;0",
-											"left": 29,
-											"top": 830,
+											"left": 21,
+											"top": 782,
 											"width": 94.61181640625,
 											"height": 13,
 											"text": "타입",
@@ -445,8 +446,8 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 24,
-									"top": 825,
+									"left": 16,
+									"top": 777,
 									"width": 104.61181640625,
 									"height": 23
 								},
@@ -470,8 +471,8 @@
 												"$ref": "AAAAAAGGrJWSMb9ICZE="
 											},
 											"font": "Arial;13;0",
-											"left": 29,
-											"top": 853,
+											"left": 21,
+											"top": 805,
 											"width": 94.61181640625,
 											"height": 13,
 											"text": "매치확인()",
@@ -479,8 +480,8 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 24,
-									"top": 848,
+									"left": 16,
+									"top": 800,
 									"width": 104.61181640625,
 									"height": 23
 								},
@@ -495,8 +496,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -248,
-									"top": 728,
+									"left": -256,
+									"top": 680,
 									"width": 10,
 									"height": 10
 								},
@@ -511,8 +512,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -248,
-									"top": 728,
+									"left": -256,
+									"top": 680,
 									"width": 10,
 									"height": 10
 								}
@@ -520,8 +521,8 @@
 							"font": "Arial;13;0",
 							"showShadow": false,
 							"containerChangeable": true,
-							"left": 24,
-							"top": 800,
+							"left": 16,
+							"top": 752,
 							"width": 104.61181640625,
 							"height": 129,
 							"showVisibility": false,
@@ -571,8 +572,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": 45,
-											"top": 301,
+											"left": 13,
+											"top": 269,
 											"width": 117.61181640625,
 											"height": 13
 										},
@@ -583,8 +584,8 @@
 												"$ref": "AAAAAAGGobxOxqw/SWw="
 											},
 											"font": "Arial;13;1",
-											"left": 37,
-											"top": 287,
+											"left": 21,
+											"top": 271,
 											"width": 108.5703125,
 											"height": 13,
 											"text": "레벨 이니셜라이저"
@@ -597,8 +598,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -96,
-											"top": -112,
+											"left": -128,
+											"top": -144,
 											"width": 77.9365234375,
 											"height": 13,
 											"text": "(from Model)"
@@ -611,15 +612,15 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -96,
-											"top": -112,
+											"left": -128,
+											"top": -144,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 32,
-									"top": 280,
+									"left": 16,
+									"top": 264,
 									"width": 118.5703125,
 									"height": 25,
 									"stereotypeLabel": {
@@ -655,8 +656,8 @@
 												"$ref": "AAAAAAGGpaKGH0mv8Sk="
 											},
 											"font": "Arial;13;0",
-											"left": 37,
-											"top": 310,
+											"left": 21,
+											"top": 294,
 											"width": 108.5703125,
 											"height": 13,
 											"text": "레벨넘버",
@@ -672,8 +673,8 @@
 												"$ref": "AAAAAAGGpaGHQ0me8zg="
 											},
 											"font": "Arial;13;0",
-											"left": 37,
-											"top": 325,
+											"left": 21,
+											"top": 309,
 											"width": 108.5703125,
 											"height": 13,
 											"text": "골타입",
@@ -689,8 +690,8 @@
 												"$ref": "AAAAAAGGpaG8dEml6Nw="
 											},
 											"font": "Arial;13;0",
-											"left": 37,
-											"top": 340,
+											"left": 21,
+											"top": 324,
 											"width": 108.5703125,
 											"height": 13,
 											"text": "골넘버",
@@ -706,8 +707,8 @@
 												"$ref": "AAAAAAGGpaKix0m2nz8="
 											},
 											"font": "Arial;13;0",
-											"left": 37,
-											"top": 355,
+											"left": 21,
+											"top": 339,
 											"width": 108.5703125,
 											"height": 13,
 											"text": "무브제한넘버",
@@ -715,8 +716,8 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 32,
-									"top": 305,
+									"left": 16,
+									"top": 289,
 									"width": 118.5703125,
 									"height": 68
 								},
@@ -740,8 +741,8 @@
 												"$ref": "AAAAAAGGpaP8XEnBUxw="
 											},
 											"font": "Arial;13;0",
-											"left": 37,
-											"top": 378,
+											"left": 21,
+											"top": 362,
 											"width": 108.5703125,
 											"height": 13,
 											"text": "이닛()",
@@ -749,8 +750,8 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 32,
-									"top": 373,
+									"left": 16,
+									"top": 357,
 									"width": 118.5703125,
 									"height": 23
 								},
@@ -765,8 +766,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -48,
-									"top": -56,
+									"left": -64,
+									"top": -72,
 									"width": 10,
 									"height": 10
 								},
@@ -781,8 +782,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -48,
-									"top": -56,
+									"left": -64,
+									"top": -72,
 									"width": 10,
 									"height": 10
 								}
@@ -790,8 +791,8 @@
 							"font": "Arial;13;0",
 							"showShadow": false,
 							"containerChangeable": true,
-							"left": 32,
-							"top": 280,
+							"left": 16,
+							"top": 264,
 							"width": 118.5703125,
 							"height": 116,
 							"showVisibility": false,
@@ -841,8 +842,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -331,
-											"top": 1629,
+											"left": 117,
+											"top": 205,
 											"width": 147.2236328125,
 											"height": 13
 										},
@@ -853,9 +854,9 @@
 												"$ref": "AAAAAAGGob7u/6xpZEk="
 											},
 											"font": "Arial;13;1",
-											"left": 29,
-											"top": 959,
-											"width": 139.140625,
+											"left": 253,
+											"top": 247,
+											"width": 179.841796875,
 											"height": 13,
 											"text": "오브젝트 풀링 컨트롤러"
 										},
@@ -867,8 +868,7 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -448,
-											"top": 1200,
+											"top": -224,
 											"width": 77.9365234375,
 											"height": 13,
 											"text": "(from Model)"
@@ -881,16 +881,15 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -448,
-											"top": 1200,
+											"top": -224,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 24,
-									"top": 952,
-									"width": 149.140625,
+									"left": 248,
+									"top": 240,
+									"width": 189.841796875,
 									"height": 25,
 									"stereotypeLabel": {
 										"$ref": "AAAAAAGGob7u/6xqXq8="
@@ -914,11 +913,64 @@
 									"model": {
 										"$ref": "AAAAAAGGob7u/6xmWGE="
 									},
+									"subViews": [
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGGtwmI7wW+JfY=",
+											"_parent": {
+												"$ref": "AAAAAAGGob7u/6xusmg="
+											},
+											"model": {
+												"$ref": "AAAAAAGGtwmI3gW72qI="
+											},
+											"font": "Arial;13;0",
+											"left": 253,
+											"top": 270,
+											"width": 179.841796875,
+											"height": 13,
+											"text": "이름_오브젝트 딕셔너리",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGGtwnXaQXF7+Y=",
+											"_parent": {
+												"$ref": "AAAAAAGGob7u/6xusmg="
+											},
+											"model": {
+												"$ref": "AAAAAAGGtwnXXgXC7kA="
+											},
+											"font": "Arial;13;0",
+											"left": 253,
+											"top": 285,
+											"width": 179.841796875,
+											"height": 13,
+											"text": "이름_풀 딕셔너리",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAGGtwpuTwXO1bs=",
+											"_parent": {
+												"$ref": "AAAAAAGGob7u/6xusmg="
+											},
+											"model": {
+												"$ref": "AAAAAAGGtwpuRgXLw5w="
+											},
+											"font": "Arial;13;0",
+											"left": 253,
+											"top": 300,
+											"width": 179.841796875,
+											"height": 13,
+											"text": "이름_오브젝트데이터 딕셔너리",
+											"horizontalAlignment": 0
+										}
+									],
 									"font": "Arial;13;0",
-									"left": 24,
-									"top": 977,
-									"width": 149.140625,
-									"height": 10
+									"left": 248,
+									"top": 265,
+									"width": 189.841796875,
+									"height": 53
 								},
 								{
 									"_type": "UMLOperationCompartmentView",
@@ -929,11 +981,98 @@
 									"model": {
 										"$ref": "AAAAAAGGob7u/6xmWGE="
 									},
+									"subViews": [
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGtwqv9gXVFdI=",
+											"_parent": {
+												"$ref": "AAAAAAGGob7u/6xv9Vc="
+											},
+											"model": {
+												"$ref": "AAAAAAGGtwqv8AXSqmk="
+											},
+											"font": "Arial;13;0",
+											"left": 253,
+											"top": 323,
+											"width": 179.841796875,
+											"height": 13,
+											"text": "비활성화오브젝트찾기()",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGtwvVZAXcs0E=",
+											"_parent": {
+												"$ref": "AAAAAAGGob7u/6xv9Vc="
+											},
+											"model": {
+												"$ref": "AAAAAAGGtwvVXQXZ798="
+											},
+											"font": "Arial;13;0",
+											"left": 253,
+											"top": 338,
+											"width": 179.841796875,
+											"height": 13,
+											"text": "오브젝트얻기()",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGtwwxUwXjDdg=",
+											"_parent": {
+												"$ref": "AAAAAAGGob7u/6xv9Vc="
+											},
+											"model": {
+												"$ref": "AAAAAAGGtwwxTQXgL5A="
+											},
+											"font": "Arial;13;0",
+											"left": 253,
+											"top": 353,
+											"width": 179.841796875,
+											"height": 13,
+											"text": "오브젝트복사하기()",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGtw3tCgZbsV4=",
+											"_parent": {
+												"$ref": "AAAAAAGGob7u/6xv9Vc="
+											},
+											"model": {
+												"$ref": "AAAAAAGGtw3s/gZYGaM="
+											},
+											"font": "Arial;13;0",
+											"left": 253,
+											"top": 368,
+											"width": 179.841796875,
+											"height": 13,
+											"text": "스위츠풀만들기()",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAGGtyJyjAZk4Fo=",
+											"_parent": {
+												"$ref": "AAAAAAGGob7u/6xv9Vc="
+											},
+											"model": {
+												"$ref": "AAAAAAGGtyJyhQZhHHU="
+											},
+											"font": "Arial;13;0",
+											"left": 253,
+											"top": 383,
+											"width": 179.841796875,
+											"height": 13,
+											"text": "풀만들기()",
+											"horizontalAlignment": 0
+										}
+									],
 									"font": "Arial;13;0",
-									"left": 24,
-									"top": 987,
-									"width": 149.140625,
-									"height": 10
+									"left": 248,
+									"top": 318,
+									"width": 189.841796875,
+									"height": 83
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -946,8 +1085,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -224,
-									"top": 600,
+									"top": -112,
 									"width": 10,
 									"height": 10
 								},
@@ -962,8 +1100,7 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -224,
-									"top": 600,
+									"top": -112,
 									"width": 10,
 									"height": 10
 								}
@@ -971,10 +1108,10 @@
 							"font": "Arial;13;0",
 							"showShadow": false,
 							"containerChangeable": true,
-							"left": 24,
-							"top": 952,
-							"width": 149.140625,
-							"height": 45,
+							"left": 248,
+							"top": 240,
+							"width": 189.841796875,
+							"height": 161,
 							"showVisibility": false,
 							"showProperty": false,
 							"showType": false,
@@ -1583,8 +1720,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -224,
-											"top": -48,
+											"left": -256,
+											"top": -112,
 											"height": 13
 										},
 										{
@@ -1594,8 +1731,8 @@
 												"$ref": "AAAAAAGGpZLIb0iO0VY="
 											},
 											"font": "Arial;13;1",
-											"left": 37,
-											"top": 431,
+											"left": 21,
+											"top": 399,
 											"width": 126,
 											"height": 13,
 											"text": "인게임 매니저"
@@ -1608,8 +1745,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -224,
-											"top": -48,
+											"left": -256,
+											"top": -112,
 											"width": 77.9365234375,
 											"height": 13,
 											"text": "(from Model)"
@@ -1622,15 +1759,15 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -224,
-											"top": -48,
+											"left": -256,
+											"top": -112,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 32,
-									"top": 424,
+									"left": 16,
+									"top": 392,
 									"width": 136,
 									"height": 25,
 									"stereotypeLabel": {
@@ -1666,8 +1803,8 @@
 												"$ref": "AAAAAAGGpZQVw0jUBJE="
 											},
 											"font": "Arial;13;0",
-											"left": 37,
-											"top": 454,
+											"left": 21,
+											"top": 422,
 											"width": 126,
 											"height": 13,
 											"text": "골",
@@ -1683,8 +1820,8 @@
 												"$ref": "AAAAAAGGrLHmVb9bXJw="
 											},
 											"font": "Arial;13;0",
-											"left": 37,
-											"top": 469,
+											"left": 21,
+											"top": 437,
 											"width": 126,
 											"height": 13,
 											"text": "스코어",
@@ -1692,8 +1829,8 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 32,
-									"top": 449,
+									"left": 16,
+									"top": 417,
 									"width": 136,
 									"height": 38
 								},
@@ -1717,8 +1854,8 @@
 												"$ref": "AAAAAAGGpZPEgUjN00g="
 											},
 											"font": "Arial;13;0",
-											"left": 37,
-											"top": 492,
+											"left": 21,
+											"top": 460,
 											"width": 126,
 											"height": 13,
 											"text": "게임클리어()",
@@ -1734,8 +1871,8 @@
 												"$ref": "AAAAAAGGrLI/5r9iqe0="
 											},
 											"font": "Arial;13;0",
-											"left": 37,
-											"top": 507,
+											"left": 21,
+											"top": 475,
 											"width": 126,
 											"height": 13,
 											"text": "스코어추가()",
@@ -1751,8 +1888,8 @@
 												"$ref": "AAAAAAGGrLJwnb9stGk="
 											},
 											"font": "Arial;13;0",
-											"left": 37,
-											"top": 522,
+											"left": 21,
+											"top": 490,
 											"width": 126,
 											"height": 13,
 											"text": "스코어업데이트()",
@@ -1760,8 +1897,8 @@
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 32,
-									"top": 487,
+									"left": 16,
+									"top": 455,
 									"width": 136,
 									"height": 53
 								},
@@ -1776,8 +1913,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -112,
-									"top": -24,
+									"left": -128,
+									"top": -56,
 									"width": 10,
 									"height": 10
 								},
@@ -1792,16 +1929,16 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -112,
-									"top": -24,
+									"left": -128,
+									"top": -56,
 									"width": 10,
 									"height": 10
 								}
 							],
 							"font": "Arial;13;0",
 							"containerChangeable": true,
-							"left": 32,
-							"top": 424,
+							"left": 16,
+							"top": 392,
 							"width": 136,
 							"height": 176,
 							"showVisibility": false,
@@ -1852,7 +1989,7 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": -560,
-											"top": 608,
+											"top": 528,
 											"height": 13
 										},
 										{
@@ -1863,7 +2000,7 @@
 											},
 											"font": "Arial;13;1",
 											"left": 21,
-											"top": 631,
+											"top": 591,
 											"width": 118,
 											"height": 13,
 											"text": "UI 핸들러"
@@ -1877,7 +2014,7 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": -560,
-											"top": 608,
+											"top": 528,
 											"width": 77.9365234375,
 											"height": 13,
 											"text": "(from Model)"
@@ -1891,14 +2028,14 @@
 											"visible": false,
 											"font": "Arial;13;0",
 											"left": -560,
-											"top": 608,
+											"top": 528,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
 									"left": 16,
-									"top": 624,
+									"top": 584,
 									"width": 128,
 									"height": 25,
 									"stereotypeLabel": {
@@ -1925,7 +2062,7 @@
 									},
 									"font": "Arial;13;0",
 									"left": 16,
-									"top": 649,
+									"top": 609,
 									"width": 128,
 									"height": 10
 								},
@@ -1950,7 +2087,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 21,
-											"top": 664,
+											"top": 624,
 											"width": 118,
 											"height": 13,
 											"text": "스코어보여주기()",
@@ -1967,7 +2104,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 21,
-											"top": 679,
+											"top": 639,
 											"width": 118,
 											"height": 13,
 											"text": "목표보여주기()",
@@ -1984,7 +2121,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 21,
-											"top": 694,
+											"top": 654,
 											"width": 118,
 											"height": 13,
 											"text": "별채우기()",
@@ -1993,7 +2130,7 @@
 									],
 									"font": "Arial;13;0",
 									"left": 16,
-									"top": 659,
+									"top": 619,
 									"width": 128,
 									"height": 53
 								},
@@ -2009,7 +2146,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": -280,
-									"top": 304,
+									"top": 264,
 									"width": 10,
 									"height": 10
 								},
@@ -2025,7 +2162,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": -280,
-									"top": 304,
+									"top": 264,
 									"width": 10,
 									"height": 10
 								}
@@ -2033,7 +2170,7 @@
 							"font": "Arial;13;0",
 							"containerChangeable": true,
 							"left": 16,
-							"top": 624,
+							"top": 584,
 							"width": 128,
 							"height": 160,
 							"showVisibility": false,
@@ -2083,8 +2220,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -368,
-											"top": 1536,
+											"left": -400,
+											"top": 1424,
 											"height": 13
 										},
 										{
@@ -2094,8 +2231,8 @@
 												"$ref": "AAAAAAGGrIzad73F5+k="
 											},
 											"font": "Arial;13;1",
-											"left": 149,
-											"top": 815,
+											"left": 133,
+											"top": 759,
 											"width": 86,
 											"height": 13,
 											"text": "스위츠"
@@ -2108,8 +2245,8 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -368,
-											"top": 1536,
+											"left": -400,
+											"top": 1424,
 											"width": 77.9365234375,
 											"height": 13,
 											"text": "(from Model)"
@@ -2122,15 +2259,15 @@
 											},
 											"visible": false,
 											"font": "Arial;13;0",
-											"left": -368,
-											"top": 1536,
+											"left": -400,
+											"top": 1424,
 											"height": 13,
 											"horizontalAlignment": 1
 										}
 									],
 									"font": "Arial;13;0",
-									"left": 144,
-									"top": 808,
+									"left": 128,
+									"top": 752,
 									"width": 96,
 									"height": 25,
 									"stereotypeLabel": {
@@ -2156,8 +2293,8 @@
 										"$ref": "AAAAAAGGrIzadr3Cr8E="
 									},
 									"font": "Arial;13;0",
-									"left": 144,
-									"top": 833,
+									"left": 128,
+									"top": 777,
 									"width": 96,
 									"height": 10
 								},
@@ -2171,8 +2308,8 @@
 										"$ref": "AAAAAAGGrIzadr3Cr8E="
 									},
 									"font": "Arial;13;0",
-									"left": 144,
-									"top": 843,
+									"left": 128,
+									"top": 787,
 									"width": 96,
 									"height": 10
 								},
@@ -2187,8 +2324,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -184,
-									"top": 768,
+									"left": -200,
+									"top": 712,
 									"width": 10,
 									"height": 10
 								},
@@ -2203,16 +2340,16 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": -184,
-									"top": 768,
+									"left": -200,
+									"top": 712,
 									"width": 10,
 									"height": 10
 								}
 							],
 							"font": "Arial;13;0",
 							"containerChangeable": true,
-							"left": 144,
-							"top": 808,
+							"left": 128,
+							"top": 752,
 							"width": 96,
 							"height": 64,
 							"showVisibility": false,
@@ -2232,6 +2369,185 @@
 							},
 							"templateParameterCompartment": {
 								"$ref": "AAAAAAGGrIzaeL3NU0I="
+							}
+						},
+						{
+							"_type": "UMLClassView",
+							"_id": "AAAAAAGGtw088wYq1D4=",
+							"_parent": {
+								"$ref": "AAAAAAFF+qBtyKM79qY="
+							},
+							"model": {
+								"$ref": "AAAAAAGGtw088wYo3Qs="
+							},
+							"subViews": [
+								{
+									"_type": "UMLNameCompartmentView",
+									"_id": "AAAAAAGGtw088wYrf1U=",
+									"_parent": {
+										"$ref": "AAAAAAGGtw088wYq1D4="
+									},
+									"model": {
+										"$ref": "AAAAAAGGtw088wYo3Qs="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAGGtw089AYsCt0=",
+											"_parent": {
+												"$ref": "AAAAAAGGtw088wYrf1U="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 96,
+											"top": -112,
+											"height": 13
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAGGtw089AYtpaA=",
+											"_parent": {
+												"$ref": "AAAAAAGGtw088wYrf1U="
+											},
+											"font": "Arial;13;1",
+											"left": 253,
+											"top": 495,
+											"width": 175,
+											"height": 13,
+											"text": "이벤트 핸들러"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAGGtw089AYuv/4=",
+											"_parent": {
+												"$ref": "AAAAAAGGtw088wYrf1U="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 96,
+											"top": -112,
+											"width": 77.9365234375,
+											"height": 13,
+											"text": "(from Model)"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAGGtw089AYvtdI=",
+											"_parent": {
+												"$ref": "AAAAAAGGtw088wYrf1U="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"left": 96,
+											"top": -112,
+											"height": 13,
+											"horizontalAlignment": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 248,
+									"top": 488,
+									"width": 185,
+									"height": 25,
+									"stereotypeLabel": {
+										"$ref": "AAAAAAGGtw089AYsCt0="
+									},
+									"nameLabel": {
+										"$ref": "AAAAAAGGtw089AYtpaA="
+									},
+									"namespaceLabel": {
+										"$ref": "AAAAAAGGtw089AYuv/4="
+									},
+									"propertyLabel": {
+										"$ref": "AAAAAAGGtw089AYvtdI="
+									}
+								},
+								{
+									"_type": "UMLAttributeCompartmentView",
+									"_id": "AAAAAAGGtw089AYwV2k=",
+									"_parent": {
+										"$ref": "AAAAAAGGtw088wYq1D4="
+									},
+									"model": {
+										"$ref": "AAAAAAGGtw088wYo3Qs="
+									},
+									"font": "Arial;13;0",
+									"left": 248,
+									"top": 513,
+									"width": 185,
+									"height": 10
+								},
+								{
+									"_type": "UMLOperationCompartmentView",
+									"_id": "AAAAAAGGtw089AYxM2U=",
+									"_parent": {
+										"$ref": "AAAAAAGGtw088wYq1D4="
+									},
+									"model": {
+										"$ref": "AAAAAAGGtw088wYo3Qs="
+									},
+									"font": "Arial;13;0",
+									"left": 248,
+									"top": 523,
+									"width": 185,
+									"height": 10
+								},
+								{
+									"_type": "UMLReceptionCompartmentView",
+									"_id": "AAAAAAGGtw089AYynpw=",
+									"_parent": {
+										"$ref": "AAAAAAGGtw088wYq1D4="
+									},
+									"model": {
+										"$ref": "AAAAAAGGtw088wYo3Qs="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 48,
+									"top": -56,
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLTemplateParameterCompartmentView",
+									"_id": "AAAAAAGGtw089AYz0rU=",
+									"_parent": {
+										"$ref": "AAAAAAGGtw088wYq1D4="
+									},
+									"model": {
+										"$ref": "AAAAAAGGtw088wYo3Qs="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 48,
+									"top": -56,
+									"width": 10,
+									"height": 10
+								}
+							],
+							"font": "Arial;13;0",
+							"containerChangeable": true,
+							"left": 248,
+							"top": 488,
+							"width": 185,
+							"height": 169,
+							"showVisibility": false,
+							"showProperty": false,
+							"showType": false,
+							"nameCompartment": {
+								"$ref": "AAAAAAGGtw088wYrf1U="
+							},
+							"attributeCompartment": {
+								"$ref": "AAAAAAGGtw089AYwV2k="
+							},
+							"operationCompartment": {
+								"$ref": "AAAAAAGGtw089AYxM2U="
+							},
+							"receptionCompartment": {
+								"$ref": "AAAAAAGGtw089AYynpw="
+							},
+							"templateParameterCompartment": {
+								"$ref": "AAAAAAGGtw089AYz0rU="
 							}
 						}
 					]
@@ -2283,6 +2599,14 @@
 						},
 						{
 							"_type": "UMLOperation",
+							"_id": "AAAAAAGGrJY8zb9PbX8=",
+							"_parent": {
+								"$ref": "AAAAAAGGobasn6vlyno="
+							},
+							"name": "스위츠채우기"
+						},
+						{
+							"_type": "UMLOperation",
 							"_id": "AAAAAAGGpPSYLUfn82o=",
 							"_parent": {
 								"$ref": "AAAAAAGGobasn6vlyno="
@@ -2296,14 +2620,6 @@
 								"$ref": "AAAAAAGGobasn6vlyno="
 							},
 							"name": "스위츠위치바꾸기"
-						},
-						{
-							"_type": "UMLOperation",
-							"_id": "AAAAAAGGrJY8zb9PbX8=",
-							"_parent": {
-								"$ref": "AAAAAAGGobasn6vlyno="
-							},
-							"name": "스위츠배열하기"
 						}
 					]
 				},
@@ -2398,7 +2714,78 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "오브젝트 풀링 컨트롤러"
+					"name": "오브젝트 풀링 컨트롤러",
+					"attributes": [
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAGGtwmI3gW72qI=",
+							"_parent": {
+								"$ref": "AAAAAAGGob7u/6xmWGE="
+							},
+							"name": "이름_오브젝트 딕셔너리",
+							"type": ""
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAGGtwnXXgXC7kA=",
+							"_parent": {
+								"$ref": "AAAAAAGGob7u/6xmWGE="
+							},
+							"name": "이름_풀 딕셔너리",
+							"type": ""
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAGGtwpuRgXLw5w=",
+							"_parent": {
+								"$ref": "AAAAAAGGob7u/6xmWGE="
+							},
+							"name": "이름_오브젝트데이터 딕셔너리",
+							"type": ""
+						}
+					],
+					"operations": [
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGGtwqv8AXSqmk=",
+							"_parent": {
+								"$ref": "AAAAAAGGob7u/6xmWGE="
+							},
+							"name": "비활성화오브젝트찾기"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGGtwvVXQXZ798=",
+							"_parent": {
+								"$ref": "AAAAAAGGob7u/6xmWGE="
+							},
+							"name": "오브젝트얻기"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGGtwwxTQXgL5A=",
+							"_parent": {
+								"$ref": "AAAAAAGGob7u/6xmWGE="
+							},
+							"name": "오브젝트복사하기"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGGtw3s/gZYGaM=",
+							"_parent": {
+								"$ref": "AAAAAAGGob7u/6xmWGE="
+							},
+							"name": "스위츠풀만들기"
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAGGtyJyhQZhHHU=",
+							"_parent": {
+								"$ref": "AAAAAAGGob7u/6xmWGE="
+							},
+							"name": "풀만들기"
+						}
+					]
 				},
 				{
 					"_type": "UMLClass",
@@ -2578,6 +2965,22 @@
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
 					"name": "스위츠"
+				},
+				{
+					"_type": "UMLClass",
+					"_id": "AAAAAAGGtw0cXQXnSLs=",
+					"_parent": {
+						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
+					},
+					"name": "Class1"
+				},
+				{
+					"_type": "UMLClass",
+					"_id": "AAAAAAGGtw088wYo3Qs=",
+					"_parent": {
+						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
+					},
+					"name": "이벤트 핸들러"
 				}
 			]
 		}
