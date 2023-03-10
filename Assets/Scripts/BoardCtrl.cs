@@ -16,12 +16,12 @@ public class BoardCtrl : MonoBehaviour
     }
     private static BoardCtrl instance;
 
-    public GameObject[] HolderChunk;
-    public float[,] Holder;
+    public GameObject HolderChunk;
+    public int[,] Holder;
     public GameObject[] SpawnerGroup;
 
-    public int width;
-    public int height;
+    public int width = 7;
+    public int height = 7;
 
     private void InspectHolderChunk()
     {
@@ -30,7 +30,20 @@ public class BoardCtrl : MonoBehaviour
 
     public void Awake()
     {
-        Holder = new float[width, height];
+
+        InitializeHolder();
+    }
+
+    private void InitializeHolder()
+    {
+        Holder = new int[width, height];
+        for (int i = 0; i < width; i ++)
+        {
+            for (int j = 0; j < height; j++)
+            {
+                FillSweets(i, j);
+            }
+        }
     }
 
     public void Start()
@@ -55,22 +68,22 @@ public class BoardCtrl : MonoBehaviour
 
                 GameObject target = null;
 
-                if (x > 0 && grid[x - 1, y] != null && grid[x - 1, y].tag == selected.tag)
-                {
-                    target = grid[x - 1, y];
-                }
-                if (x < width - 1 && grid[x + 1, y] != null && grid[x + 1, y].tag == selected.tag)
-                {
-                    target = grid[x + 1, y];
-                }
-                if (y > 0 && grid[x, y - 1] != null && grid[x, y - 1].tag == selected.tag)
-                {
-                    target = grid[x, y - 1];
-                }
-                if (y < height - 1 && grid[x, y + 1] != null && grid[x, y + 1].tag == selected.tag)
-                {
-                    target = grid[x, y + 1];
-                }
+                //if (x > 0 && grid[x - 1, y] != null && grid[x - 1, y].tag == selected.tag)
+                //{
+                //    target = grid[x - 1, y];
+                //}
+                //if (x < width - 1 && grid[x + 1, y] != null && grid[x + 1, y].tag == selected.tag)
+                //{
+                //    target = grid[x + 1, y];
+                //}
+                //if (y > 0 && grid[x, y - 1] != null && grid[x, y - 1].tag == selected.tag)
+                //{
+                //    target = grid[x, y - 1];
+                //}
+                //if (y < height - 1 && grid[x, y + 1] != null && grid[x, y + 1].tag == selected.tag)
+                //{
+                //    target = grid[x, y + 1];
+                //}
                 if (target != null)
                 {
                     Swap(selected, target);
@@ -104,9 +117,17 @@ public class BoardCtrl : MonoBehaviour
 
     }
 
-    private void FillSweets(Vector2 pos)
+    private void FillSweets(int index_X, int index_Y)
     {
-        
+        GameObject select = null;
+
+        SweetsType rand = (SweetsType)Random.Range(1, System.Enum.GetValues(typeof(SweetsType)).Length + 1);
+        Holder[index_X, index_Y] = (int)rand;
+
+        select = ObjectCtrl.Instance.GetObject(rand.ToString());
+
+        Vector2 selectPos = new Vector2(index_X / HolderChunk.width, index_Y / HolderChunk.height);
+
     }
 
     private void DestroySweets()

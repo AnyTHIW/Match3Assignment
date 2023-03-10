@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5835407750380962811}
   - component: {fileID: 5835407750380962812}
   m_Layer: 0
-  m_Name: BigPoppingCandy
+  m_Name: BigMunchkin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 5835407751190002332}
   - component: {fileID: 5835407751190002333}
   m_Layer: 0
-  m_Name: PoppingCandyPackage
+  m_Name: MunchkinPackage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

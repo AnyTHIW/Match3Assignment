@@ -4,16 +4,23 @@ using UnityEngine;
 
 public enum SweetsType
 {
-    Yellow,
-    Red,
-    Green,
-    Purple,
+    Apple = 0,
+    Banana,
+    Blueberry,
+    Grape,
+    Munchkin,
+    Orange,
+    Pear,
+    RainbowMarsh,
 }
 
 public enum SpecialSweetsType
 {
-    PoppingCandy,
-
+    None,
+    HorizontalWrapped,
+    VerticalWrapped,
+    Package,
+    Big,
 }
 
 public class SweetsCtrl : MonoBehaviour
@@ -43,7 +50,7 @@ public class SweetsCtrl : MonoBehaviour
 
     private void GetRandomSweet()
     {
-
+        
     }
 
 }
